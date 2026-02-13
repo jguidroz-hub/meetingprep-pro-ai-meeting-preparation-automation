@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-interface Meetings/[id]Item {
+interface MeetingsDetailItem
   id: string;
   title?: string;
   status?: string;
@@ -10,8 +10,8 @@ interface Meetings/[id]Item {
   [key: string]: any;
 }
 
-export default function Meetings/[id]Page() {
-  const [items, setItems] = useState<Meetings/[id]Item[]>([]);
+export default function MeetingsDetailPage
+  const [items, setItems] = useState<MeetingsDetailItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [showCreate, setShowCreate] = useState(false);
   const [newTitle, setNewTitle] = useState('');
@@ -39,7 +39,7 @@ export default function Meetings/[id]Page() {
   };
 
   const handleDelete = async (id: string) => {
-    await fetch(`/api/meetings/[id]/${id}`, { method: 'DELETE' });
+    await fetch(`/ApiMeetingsDetail/${id}`, { method: 'DELETE' });
     setItems(prev => prev.filter(i => i.id !== id));
   };
 
